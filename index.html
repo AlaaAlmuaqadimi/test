@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>شركة النواة الجديدة لاستيراد المواد الغذائية</title>
+  <meta name="description" content="استيراد وتوريد مواد غذائية بجودة عالية - مقرنا حي الأندلس." />
+<link rel="shortcut icon" href="logo.png" type="image/x-icon">
+  <!-- Google Font (اختياري) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- AOS animations -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Main CSS --> 
+   <style>
+    :root{
+  /* الخلفيات */
+  --bg:#f6f8fc;                    /* خلفية الموقع فاتحة */
+  --card:rgba(255,255,255,.92);    /* الكروت */
+
+  /* النصوص */
+  --text:#0f172a;
+  --muted:#475569;
+
+  /* الهوية */
+  --brand:#0ea5a4;
+  --brand2:#2563eb;
+
+  /* الحدود والظلال */
+  --border:rgba(15,23,42,.12);
+  --shadow:0 18px 45px rgba(15,23,42,.15);
+
+  --radius:18px;
+  --max:1120px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:"Cairo", system-ui, -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
+  background:
+    radial-gradient(900px 500px at 85% 10%, rgba(14,165,164,.12), transparent 60%),
+    radial-gradient(900px 500px at 15% 30%, rgba(37,99,235,.10), transparent 60%),
+    var(--bg);
+  color:var(--text);
+  line-height:1.85;
+  overflow-x:hidden;
+}
+
+a{color:inherit; text-decoration:none}
+.wrap{max-width:var(--max); margin:auto; padding:0 18px}
+
+/* NAVBAR */
+.nav{
+  position:sticky;
+  top:0;
+  z-index:50;
+  backdrop-filter:blur(12px);
+  background:rgba(255,255,255,.75);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 0;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:800;
+}
+
+.logo{
+  width:56px;
+  height:56px;
+  border-radius:16px;
+
+  /* خلفية قريدينت فاتح */
+  background: linear-gradient(
+    135deg,
+    #f0f7ff 0%,
+    #e6fbf8 50%,
+    #eef2ff 100%
+  );
+
+  display:flex;
+  align-items:center;
+  justify-content:center;   /* توسيط الشعار أفقي وعمودي */
+
+  border:1px solid rgba(15,23,42,.12);
+  box-shadow: 0 8px 24px rgba(15,23,42,.12);
+  overflow:hidden;
+}
+
+.logo img{
+  width:75%;
+  height:75%;
+  object-fit:contain;
+  display:block;
+}
+
+
+.menu{display:flex; gap:12px}
+.menu a{
+  padding:8px 10px;
+  border-radius:12px;
+  color:var(--muted);
+  transition:.2s;
+}
+.menu a:hover{
+  color:var(--text);
+  background:rgba(0,0,0,.05);
+}
+
+/* BUTTONS */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 18px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.6);
+  color:var(--text);
+  font-weight:800;
+  transition:.2s;
+}
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:var(--shadow);
+}
+.btn.primary{
+  background:linear-gradient(135deg,var(--brand),var(--brand2));
+  color:#fff;
+  border:none;
+}
+
+/* ===================== */
+/* HERO (داكن كما السابق) */
+/* ===================== */
+.hero{
+  width:100vw;
+  min-height:100vh;
+}
+.hero-slider{
+  position:relative;
+  width:100%;
+  height:100vh;
+  overflow:hidden;
+  padding:0 !important;
+  border:0;
+  background:#070c16;
+}
+.slides,.slide,.overlay{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+}
+.slide{
+  background-size:cover;
+  background-position:center;
+  opacity:0;
+  transform:scale(1.06);
+  transition:opacity 1s ease, transform 8s ease;
+}
+.slide.active{
+  opacity:1;
+  transform:scale(1);
+}
+
+/* Overlay الداكن الأصلي */
+.overlay{
+  background: linear-gradient(to left,
+    rgba(7,12,22,.85) 20%,
+    rgba(7,12,22,.55) 55%,
+    rgba(7,12,22,.20) 100%
+  );
+}
+
+/* HERO CONTENT */
+.hero-content{
+  position:relative;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:60px 18px;
+  max-width:900px;
+  margin:auto;
+  color:#eef3ff;
+}
+
+/* اسم الشركة */
+.company-name{
+  font-size:44px;
+  font-weight:900;
+  margin:0 0 8px;
+  color:var(--brand);
+}
+@media (max-width:520px){
+  .company-name{font-size:34px}
+}
+
+.badge{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  padding:10px 14px;
+  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.18);
+  color:#cbd5f5;
+  font-weight:800;
+  font-size:14px;
+  margin-bottom:10px;
+}
+
+.hero-content h1{
+  margin:6px 0 0;
+  font-size:38px;
+  line-height:1.2;
+}
+@media (max-width:520px){
+  .hero-content h1{font-size:30px}
+}
+
+.lead{
+  color:#cbd5f5;
+  margin:10px 0 14px;
+}
+.actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+/* ===================== */
+/* SECTIONS (فاتحة) */
+/* ===================== */
+section{padding:32px 0}
+.section-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  margin-bottom:16px;
+}
+.section-title h2{margin:0}
+.section-title p{margin:0;color:var(--muted)}
+
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+@media(max-width:900px){
+  .grid-3{grid-template-columns:1fr}
+}
+
+/* CARDS */
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:22px;
+  box-shadow:var(--shadow);
+}
+.lift{transition:.22s}
+.lift:hover{transform:translateY(-6px)}
+
+.icon{
+  width:46px;height:46px;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  background:rgba(0,0,0,.04);
+  border:1px solid var(--border);
+  font-size:22px;
+  margin-bottom:10px;
+}
+.small{color:var(--muted)}
+
+.thumb{
+  height:150px;
+  border-radius:16px;
+  border:1px solid var(--border);
+  margin-bottom:12px;
+  background-size:cover;
+  background-position:center;
+}
+
+/* CONTACT */
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+@media(max-width:900px){
+  .contact-grid{grid-template-columns:1fr}
+}
+
+.field{
+  display:flex;
+  justify-content:space-between;
+  padding:12px 14px;
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:rgba(0,0,0,.03);
+  color:var(--muted);
+}
+.field strong{color:var(--text)}
+
+iframe{
+  width:100%;
+  height:320px;
+  border-radius:16px;
+  border:1px solid var(--border);
+}
+
+/* FOOTER */
+.footer{
+  padding:24px 0 34px;
+  border-top:1px solid var(--border);
+  color:var(--muted);
+  text-align:center;
+}
+.ltr{
+    direction:ltr;
+  unicode-bidi:embed;
+}
+
+   </style>
+</head>
+<body>
+  <div class="bg-orb orb1"></div>
+  <div class="bg-orb orb2"></div>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="الرئيسية">
+        <div class="logo">
+          <img src="logo.png" alt="شعار شركة النواة الجديدة">
+        </div>
+
+        <div>
+          شركة <span style="color:var(--brand)">النواة الجديدة</span><br/>
+          <span style="color:var(--muted); font-size:13px">استيراد وتوريد مواد غذائية</span>
+        </div>
+      </a>
+
+      <nav class="menu" aria-label="القائمة">
+        <a href="#services">الخدمات</a>
+        <a href="#inventory">مواد غذائية / مخزون</a>
+        <a href="#about">من نحن</a>
+        <a href="#whyus">لماذا نحن</a>
+        <a href="#contact">تواصل معنا</a>
+      </nav>
+    </div>
+  </header>
+
+ <!-- HERO -->
+<main id="top" class="hero">
+  <div class="hero-grid">
+
+    <!-- Slider -->
+    <div class="card hero-slider lift" data-aos="fade-up">
+      <div class="slides">
+        <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1400&q=80')"></div>
+        <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=1400&q=80')"></div>
+        <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1580915411954-282cb1b0d780?auto=format&fit=crop&w=1400&q=80')"></div>
+        <div class="overlay"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="company-name">شركة النواة الجديدة</div>
+
+        <div class="badge">✅ جودة موثوقة • ✅ التزام بالمواعيد • ✅ موردون معتمدون</div>
+
+        <h1>استيراد وتوريد مواد غذائية بجودة عالية</h1>
+
+        <p class="lead">
+          مقرنا <b>حي الأندلس</b>، نوفّر منتجات غذائية مختارة بعناية لتلبية احتياجات السوق المحلي مع الالتزام بمعايير السلامة.
+        </p>
+
+        <div class="actions">
+          <a class="btn primary" href="#contact">تواصل معنا</a>
+          <a class="btn" href="#services">استعرض الخدمات</a>
+        </div>
+      </div>
+    </div>  <!-- ✅ هذا لازم يكون موجود لإغلاق .card hero-slider -->
+
+  </div>
+</main>
+
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>خدماتنا</h2>
+        <p></p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card lift" data-aos="fade-up">
+          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1580913428735-bd3c269d6a82?auto=format&fit=crop&w=1400&q=80')"></div>
+          <div class="icon">🧾</div>
+          <h3 style="margin:0 0 6px">استيراد المواد الغذائية</h3>
+          <p class="small">استيراد منتجات غذائية من موردين معتمدين وفق المواصفات المطلوبة.</p>
+        </div>
+
+        <div class="card lift" data-aos="fade-up" data-aos-delay="120">
+          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1580915411954-282cb1b0d780?auto=format&fit=crop&w=1400&q=80')"></div>
+          <div class="icon">🏪</div>
+          <h3 style="margin:0 0 6px">توريد للسوق المحلي</h3>
+          <p class="small">توريد لتجار الجملة والتجزئة والمطاعم والجهات ذات الصلة.</p>
+        </div>
+
+        <div class="card lift" data-aos="fade-up" data-aos-delay="240">
+          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=1400&q=80')"></div>
+          <div class="icon">✅</div>
+          <h3 style="margin:0 0 6px">جودة وسلامة غذائية</h3>
+          <p class="small">الالتزام بمعايير الجودة وسلامة المنتج والتخزين والنقل.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>من نحن</h2>
+        <p></p>
+      </div>
+
+      <div class="card lift" data-aos="fade-up">
+        <p class="small" style="margin-top:0">
+          شركة <b>النواة الجديدة لاستيراد المواد الغذائية</b> متخصصة في استيراد وتوريد المواد الغذائية،
+          نركز على اختيار المنتجات من مصادر موثوقة وبجودة عالية، مع الالتزام بالمعايير الصحية ومتطلبات السوق.
+        </p>
+        <p class="small" style="margin-bottom:0">
+          هدفنا بناء شراكات طويلة الأمد مع عملائنا عبر خدمة متميزة وأسعار تنافسية.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INVENTORY -->
+  <section id="inventory">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>مواد غذائية / مخزون</h2>
+        <p></p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card lift" data-aos="fade-up">
+          <div class="icon">🍚</div>
+          <h3 style="margin:0 0 6px">مواد أساسية</h3>
+          <p class="small">سكر • أرز • دقيق • معكرونة • زيوت</p>
+        </div>
+        <div class="card lift" data-aos="fade-up" data-aos-delay="120">
+          <div class="icon">🥫</div>
+          <h3 style="margin:0 0 6px">معلبات</h3>
+          <p class="small">صلصة • تونة • بقوليات • ذرة</p>
+        </div>
+        <div class="card lift" data-aos="fade-up" data-aos-delay="240">
+          <div class="icon">🏢</div>
+          <h3 style="margin:0 0 6px">توريد للمؤسسات</h3>
+          <p class="small">مطاعم • فنادق • محلات • مخازن</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="whyus">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>لماذا نحن</h2>
+        <p></p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card lift" data-aos="fade-up">
+          <div class="icon">⭐</div>
+          <h3 style="margin:0 0 6px">جودة مضمونة</h3>
+          <p class="small">اختيار دقيق للمنتجات من مصادر موثوقة.</p>
+        </div>
+
+        <div class="card lift" data-aos="fade-up" data-aos-delay="120">
+          <div class="icon">⏱️</div>
+          <h3 style="margin:0 0 6px">الالتزام بالمواعيد</h3>
+          <p class="small">توريد وتسليم وفق جداول متفق عليها.</p>
+        </div>
+
+        <div class="card lift" data-aos="fade-up" data-aos-delay="240">
+          <div class="icon">💰</div>
+          <h3 style="margin:0 0 6px">أسعار تنافسية</h3>
+          <p class="small">حلول مناسبة لاحتياج العملاء مع قيمة ممتازة.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>تواصل معنا</h2>
+        <p>اتصل أو أرسل رسالة</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="card lift" data-aos="fade-up">
+          <p class="small" style="margin-top:0">
+            يسعدنا التواصل معكم للطلبات وعروض الأسعار والشراكات.
+          </p>
+
+          <div class="field"><span>📍 العنوان</span> <strong>حي الأندلس</strong></div> 
+          <div class="field "><span>📞 الهاتف</span> <strong class="ltr">+218 91 368 8853</strong></div>
+          <div class="field"><span>📧 البريد</span> <strong>info@alnwatjadida.ly</strong></div> 
+
+          <div class="actions" style="margin-top:14px">
+            <a class="btn primary" href="https://wa.me/218913688853" target="_blank" rel="noopener">واتساب</a>
+            <a class="btn" href="mailto:info@alnwatjadida.ly">إرسال بريد</a>
+            <a class="btn" href="tel:+218913688853">اتصال</a>
+          </div>
+        </div>
+
+        <div class="card lift" data-aos="fade-up" data-aos-delay="120">
+          <h3 style="margin:0 0 10px">الموقع على الخريطة</h3>
+          <iframe
+            title="خريطة الموقع"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Al%20Andalus&output=embed">
+          </iframe> 
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      © 2025 شركة النواة الجديدة لاستيراد المواد الغذائية — جميع الحقوق محفوظة.
+    </div>
+  </footer>
+</body>
+
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+
+    /* =========================
+       1) HERO SLIDER
+    ========================== */
+    (function heroSlider(){
+      const slides = document.querySelectorAll('.slide');
+      if (!slides.length) return;
+
+      let idx = 0;
+      const interval = 4500;
+
+      setInterval(() => {
+        slides[idx].classList.remove('active');
+        idx = (idx + 1) % slides.length;
+        slides[idx].classList.add('active');
+      }, interval);
+    })();
+
+
+    /* =========================
+       2) SECTION ANIMATIONS (Auto)
+    ========================== */
+    const sectionAnims = [
+      { section: 'fade-up',    item: 'zoom-in' },
+      { section: 'fade-right', item: 'fade-up' },
+      { section: 'fade-left',  item: 'fade-up' },
+      { section: 'flip-up',    item: 'zoom-in' },
+      { section: 'fade-down',  item: 'fade-up' },
+      { section: 'zoom-in',    item: 'flip-left' }
+    ];
+
+    const sections = Array.from(document.querySelectorAll('main.hero, section'));
+
+    const itemSelectors = [
+      '.card',
+      '.thumb',
+      '.icon',
+      '.section-title',
+      '.field',
+      'h2','h3','p'
+    ].join(',');
+
+    sections.forEach((sec, i) => {
+      const conf = sectionAnims[i % sectionAnims.length];
+
+      // أنيميشن للسكشن نفسه
+      sec.dataset.aos = conf.section;
+      sec.dataset.aosDuration = '850';
+      sec.dataset.aosOffset = '120';
+      sec.dataset.aosOnce = 'true';
+
+      // أنيميشن للعناصر داخل السكشن (Stagger)
+      const items = Array.from(sec.querySelectorAll(itemSelectors))
+        .filter(el =>
+          !el.classList.contains('slides') &&
+          !el.classList.contains('slide') &&
+          !el.classList.contains('overlay')
+        );
+
+      items.forEach((el, j) => {
+        if (!el.dataset.aos) el.dataset.aos = conf.item;
+        el.dataset.aosDelay = String(Math.min(j * 70, 600));
+        el.dataset.aosDuration = '700';
+        el.dataset.aosOnce = 'true';
+      });
+    });
+
+
+    /* =========================
+       3) SMOOTH SCROLL
+    ========================== */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href');
+        if (!id || id === '#') return;
+
+        const target = document.querySelector(id);
+        if (!target) return;
+
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+
+    /* =========================
+       4) AOS INIT (Once)
+    ========================== */
+    AOS.init({
+      once: true,
+      duration: 800,
+      easing: 'ease-out-cubic',
+      offset: 120
+    });
+
+    // إذا كان في صور/عناصر تتأخر بالتحميل
+    AOS.refreshHard();
+  });
+</script>
+
+
+</html>
