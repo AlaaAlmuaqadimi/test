@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>شركة النواة الجديدة لاستيراد المواد الغذائية</title>
   <meta name="description" content="استيراد وتوريد مواد غذائية بجودة عالية - مقرنا حي الأندلس." />
-<link rel="shortcut icon" href="logo.png" type="image/x-icon">
-  <!-- Google Font (اختياري) -->
+<link rel="shortcut icon" href="photo/logoo-removebg-preview.png" type="image/x-icon">
+  <!-- Google Font   -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -15,23 +15,27 @@
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <!-- Main CSS --> 
-   <style>
-    :root{
+ <style> 
+:root{
+  /* =======================
+     لوحة ألوان مستوحاة من اللوقو (ذهبي/بيج)
+     ======================= */
+  --brand:#d5b886;        /* اللون الأساسي (تقريباً من اللوقو) */
+  --brand2:#b88a4b;       /* درجة أغمق للجراديانت */
+  --brand3:#8b6a3b;       /* أغمق (للنصوص/التأكيد) */
+  --brand-soft:#f3eadb;   /* فاتح جداً للخلفيات */
+
   /* الخلفيات */
-  --bg:#f6f8fc;                    /* خلفية الموقع فاتحة */
-  --card:rgba(255,255,255,.92);    /* الكروت */
+  --bg:#fbf8f2;                    /* خلفية دافئة فاتحة */
+  --card:rgba(255,255,255,.94);    /* الكروت */
 
   /* النصوص */
-  --text:#0f172a;
-  --muted:#475569;
-
-  /* الهوية */
-  --brand:#0ea5a4;
-  --brand2:#2563eb;
+  --text:#121826;
+  --muted:#5b6472;
 
   /* الحدود والظلال */
-  --border:rgba(15,23,42,.12);
-  --shadow:0 18px 45px rgba(15,23,42,.15);
+  --border:rgba(18,24,38,.12);
+  --shadow:0 18px 45px rgba(18,24,38,.14);
 
   --radius:18px;
   --max:1120px;
@@ -43,10 +47,14 @@ html{scroll-behavior:smooth}
 body{
   margin:0;
   font-family:"Cairo", system-ui, -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
+
+  /* تدرجات مناسبة للون اللوقو */
   background:
-    radial-gradient(900px 500px at 85% 10%, rgba(14,165,164,.12), transparent 60%),
-    radial-gradient(900px 500px at 15% 30%, rgba(37,99,235,.10), transparent 60%),
+    radial-gradient(900px 500px at 85% 10%, rgba(213,184,134,.22), transparent 60%),
+    radial-gradient(900px 500px at 15% 30%, rgba(184,138,75,.16), transparent 60%),
+    linear-gradient(180deg, rgba(243,234,219,.55), transparent 35%),
     var(--bg);
+
   color:var(--text);
   line-height:1.85;
   overflow-x:hidden;
@@ -61,7 +69,7 @@ a{color:inherit; text-decoration:none}
   top:0;
   z-index:50;
   backdrop-filter:blur(12px);
-  background:rgba(255,255,255,.75);
+  background:rgba(255,255,255,.78);
   border-bottom:1px solid var(--border);
 }
 .nav-inner{
@@ -82,30 +90,28 @@ a{color:inherit; text-decoration:none}
   height:56px;
   border-radius:16px;
 
-  /* خلفية قريدينت فاتح */
+  /* خلفية متناسقة مع لون اللوقو */
   background: linear-gradient(
     135deg,
-    #f0f7ff 0%,
-    #e6fbf8 50%,
-    #eef2ff 100%
+    rgba(213,184,134,.22) 0%,
+    rgba(243,234,219,.75) 55%,
+    rgba(184,138,75,.18) 100%
   );
 
   display:flex;
   align-items:center;
-  justify-content:center;   /* توسيط الشعار أفقي وعمودي */
+  justify-content:center;
 
-  border:1px solid rgba(15,23,42,.12);
-  box-shadow: 0 8px 24px rgba(15,23,42,.12);
+  border:1px solid rgba(18,24,38,.12);
+  box-shadow: 0 8px 24px rgba(18,24,38,.10);
   overflow:hidden;
 }
-
 .logo img{
   width:75%;
   height:75%;
   object-fit:contain;
   display:block;
 }
-
 
 .menu{display:flex; gap:12px}
 .menu a{
@@ -116,7 +122,7 @@ a{color:inherit; text-decoration:none}
 }
 .menu a:hover{
   color:var(--text);
-  background:rgba(0,0,0,.05);
+  background:rgba(213,184,134,.12);
 }
 
 /* BUTTONS */
@@ -127,7 +133,7 @@ a{color:inherit; text-decoration:none}
   padding:12px 18px;
   border-radius:14px;
   border:1px solid var(--border);
-  background:rgba(255,255,255,.6);
+  background:rgba(255,255,255,.65);
   color:var(--text);
   font-weight:800;
   transition:.2s;
@@ -143,7 +149,7 @@ a{color:inherit; text-decoration:none}
 }
 
 /* ===================== */
-/* HERO (داكن كما السابق) */
+/* HERO (داكن + لمسة ذهبية) */
 /* ===================== */
 .hero{
   width:100vw;
@@ -156,7 +162,12 @@ a{color:inherit; text-decoration:none}
   overflow:hidden;
   padding:0 !important;
   border:0;
-  background:#070c16;
+
+  /* بديل جميل لو ما في صور */
+  background:
+    radial-gradient(900px 600px at 70% 10%, rgba(213,184,134,.18), transparent 55%),
+    radial-gradient(900px 600px at 20% 70%, rgba(184,138,75,.14), transparent 55%),
+    #070c16;
 }
 .slides,.slide,.overlay{
   position:absolute;
@@ -176,12 +187,12 @@ a{color:inherit; text-decoration:none}
   transform:scale(1);
 }
 
-/* Overlay الداكن الأصلي */
+/* Overlay الداكن مع تدرج ذهبي خفيف */
 .overlay{
   background: linear-gradient(to left,
-    rgba(7,12,22,.85) 20%,
-    rgba(7,12,22,.55) 55%,
-    rgba(7,12,22,.20) 100%
+    rgba(7,12,22,.88) 18%,
+    rgba(7,12,22,.60) 55%,
+    rgba(213,184,134,.12) 100%
   );
 }
 
@@ -206,6 +217,7 @@ a{color:inherit; text-decoration:none}
   font-weight:900;
   margin:0 0 8px;
   color:var(--brand);
+  text-shadow:0 10px 30px rgba(0,0,0,.35);
 }
 @media (max-width:520px){
   .company-name{font-size:34px}
@@ -218,9 +230,9 @@ a{color:inherit; text-decoration:none}
   gap:10px;
   padding:10px 14px;
   border-radius:999px;
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.18);
-  color:#cbd5f5;
+  background:rgba(213,184,134,.12);
+  border:1px solid rgba(213,184,134,.22);
+  color:#f3f4f6;
   font-weight:800;
   font-size:14px;
   margin-bottom:10px;
@@ -236,7 +248,7 @@ a{color:inherit; text-decoration:none}
 }
 
 .lead{
-  color:#cbd5f5;
+  color:#dbe3f7;
   margin:10px 0 14px;
 }
 .actions{
@@ -284,8 +296,8 @@ section{padding:32px 0}
   border-radius:14px;
   display:grid;
   place-items:center;
-  background:rgba(0,0,0,.04);
-  border:1px solid var(--border);
+  background:rgba(213,184,134,.14);
+  border:1px solid rgba(213,184,134,.22);
   font-size:22px;
   margin-bottom:10px;
 }
@@ -316,7 +328,7 @@ section{padding:32px 0}
   padding:12px 14px;
   border:1px solid var(--border);
   border-radius:14px;
-  background:rgba(0,0,0,.03);
+  background:rgba(213,184,134,.10);
   color:var(--muted);
 }
 .field strong{color:var(--text)}
@@ -335,12 +347,13 @@ iframe{
   color:var(--muted);
   text-align:center;
 }
+
 .ltr{
-    direction:ltr;
+  direction:ltr;
   unicode-bidi:embed;
 }
-
-   </style>
+</style>
+ 
 </head>
 <body>
   <div class="bg-orb orb1"></div>
@@ -351,7 +364,7 @@ iframe{
     <div class="wrap nav-inner">
       <a class="brand" href="#top" aria-label="الرئيسية">
         <div class="logo">
-          <img src="logo.png" alt="شعار شركة النواة الجديدة">
+          <img src="photo/logoo-removebg-preview.png" alt="شعار شركة النواة الجديدة">
         </div>
 
         <div>
@@ -377,9 +390,9 @@ iframe{
     <!-- Slider -->
     <div class="card hero-slider lift" data-aos="fade-up">
       <div class="slides">
-        <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1400&q=80')"></div>
-        <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=1400&q=80')"></div>
-        <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1580915411954-282cb1b0d780?auto=format&fit=crop&w=1400&q=80')"></div>
+        <div class="slide active" style="background-image:url('photo/3.jpg')"></div>
+        <div class="slide" style="background-image:url('photo/4.jpg')"></div>
+        <div class="slide" style="background-image:url('photo/1.jpg')"></div>
         <div class="overlay"></div>
       </div>
 
@@ -415,21 +428,21 @@ iframe{
 
       <div class="grid-3">
         <div class="card lift" data-aos="fade-up">
-          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1580913428735-bd3c269d6a82?auto=format&fit=crop&w=1400&q=80')"></div>
+          <div class="thumb" style="background-image:url('photo/4.jpg')"></div>
           <div class="icon">🧾</div>
           <h3 style="margin:0 0 6px">استيراد المواد الغذائية</h3>
           <p class="small">استيراد منتجات غذائية من موردين معتمدين وفق المواصفات المطلوبة.</p>
         </div>
 
         <div class="card lift" data-aos="fade-up" data-aos-delay="120">
-          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1580915411954-282cb1b0d780?auto=format&fit=crop&w=1400&q=80')"></div>
+          <div class="thumb" style="background-image:url('photo/5.jpg')"></div>
           <div class="icon">🏪</div>
           <h3 style="margin:0 0 6px">توريد للسوق المحلي</h3>
           <p class="small">توريد لتجار الجملة والتجزئة والمطاعم والجهات ذات الصلة.</p>
         </div>
 
         <div class="card lift" data-aos="fade-up" data-aos-delay="240">
-          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=1400&q=80')"></div>
+          <div class="thumb" style="background-image:url('photo/1.jpg')"></div>
           <div class="icon">✅</div>
           <h3 style="margin:0 0 6px">جودة وسلامة غذائية</h3>
           <p class="small">الالتزام بمعايير الجودة وسلامة المنتج والتخزين والنقل.</p>
